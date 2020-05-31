@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GalaxyInProgressJobs>
+  <GalaxyInProgressJob>
+    <JobId></JobId>
+    <UserName></UserName>
+    <ExeName></ExeName>
+    <Arguments></Arguments>
+    <ExeRelativePath></ExeRelativePath>
+    <AutoReportStatus></AutoReportStatus>
+  </GalaxyInProgressJob>
+</GalaxyInProgressJobs>

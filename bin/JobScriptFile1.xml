@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GalaxyJobs>
+  <NewJobs>
+    <NewJob>
+      <AutoReportStatus>false</AutoReportStatus>
+      <AllowLongIdleTime>false</AllowLongIdleTime>
+      <JobShortName>DS</JobShortName>
+      <RunExe>DoSomething.exe</RunExe>
+      <Arguments></Arguments>
+      <PNInstanceNames>
+        <PNInstanceName>MSRA-GUOMAO!1</PNInstanceName>
+        <PNInstanceName>MSRA-GUOMAO!2</PNInstanceName>
+      </PNInstanceNames>
+      <ResourceFiles>
+        <ResourceFile>
+          <SrcFile>D:\Users\guomxin\Codes\Research\MSRAMM3\Researchers\guomxin\Galaxy\bin\TestData\Job\DoSomething.exe</SrcFile>
+          <DstFile>DoSomething.exe</DstFile>
+        </ResourceFile>
+      </ResourceFiles>
+    </NewJob>
+    <NewJob>
+      <AutoReportStatus>true</AutoReportStatus>
+      <AllowLongIdleTime>false</AllowLongIdleTime>
+      <JobShortName>RS</JobShortName>
+      <RunExe>Job\ReportJobStatus.exe</RunExe>
+      <Arguments></Arguments>
+      <PNInstanceNames>
+        <PNInstanceName>MSRA-GUOMAO!1</PNInstanceName>
+      </PNInstanceNames>
+      <ResourceFiles>
+        <Import dir="D:\Users\guomxin\Codes\Research\MSRAMM3\Researchers\guomxin\Galaxy\bin\TestData\"/>
+        <ResourceFile>
+          <SrcFile>D:\Users\guomxin\Codes\Research\MSRAMM3\Researchers\guomxin\Galaxy\bin\TestData\Job\DoSomething.exe</SrcFile>
+          <DstFile>DoSomething.exe</DstFile>
+        </ResourceFile>
+      </ResourceFiles>
+    </NewJob>
+  </NewJobs>
+</GalaxyJobs>

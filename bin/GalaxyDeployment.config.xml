@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<GalaxyProjectDeployment>
+  <!--Project description-->
+  <Project Name="GalaxySampleProject">
+    <Dirs Num="1">
+      <Dir>GalaxySampleProject</Dir>
+    </Dirs>
+    <Jobs Num="1">
+      <Job>
+        <Name>DoSomething</Name>
+        <AppPath>$(ProjectDir)\bin\DoSomething\DoSomething.exe</AppPath>
+        <Dirs>
+          <Dir>$(ProjectDir)\bin\DoSomething\</Dir>
+        </Dirs>
+      </Job>
+    </Jobs>
+  </Project>
+  <!--The nodes to which the project will be deployed-->
+  <ProcessingNodes>
+    <DefaultDeploymentServerPort>12300</DefaultDeploymentServerPort>
+    <ProcessNode Id="0" HostName="localhost" IPAddress="" PnPort="12300" JobList="DoSomething+HelloWorldSimple"></ProcessNode>
+  </ProcessingNodes>
+  <!--Deployment options-->
+  <DeploymentOptions>
+    <IncrementalDeployment>false</IncrementalDeployment>
+    <StopJobsIfRunning>true</StopJobsIfRunning>
+    <OverwriteExistingFiles>true</OverwriteExistingFiles>
+  </DeploymentOptions>
+</GalaxyProjectDeployment>

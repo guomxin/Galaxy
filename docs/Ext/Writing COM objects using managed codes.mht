@@ -1,0 +1,1619 @@
+From: "Saved by Windows Internet Explorer 7"
+Subject: Calling Managed .NET C# COM Objects from Unmanaged C++ Code - The Code Project - C# Programming
+Date: Mon, 23 Oct 2006 10:05:27 +0800
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01C6F68A.C3BD2330"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.0.5600.16384
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01C6F68A.C3BD2330
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.codeproject.com/csharp/ManagedCOM.asp?print=true
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Calling Managed .NET C# COM Objects from Unmanaged =
+C++ Code - The Code Project - C# Programming</TITLE>
+<META http-equiv=3DReply-to content=3Dmailto:webmaster@codeproject.com>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3Den-US name=3DMS.LOCALE>
+<META=20
+content=3D"An article on calling managed .NET C# COM objects from =
+unmanaged C++ code."=20
+name=3DDescription>
+<META content=3DkbArticle name=3DSearch.TopicType>
+<META content=3D"Atul Mani" name=3DAuthor>
+<META content=3D"10 Jan 2006 14:00:00 GMT" name=3DSearch.PublishDate>
+<META content=3D"10 Jan 2006 14:00:00 GMT" name=3DSearch.RevisedDate>
+<META=20
+content=3D"Free source code, , Visual C++, MFC, Windows, Call Managed =
+.NET C# COM Objects from unmanaged"=20
+name=3Dkeywords>
+<META=20
+content=3D"Article content copyright Atul Mani, 2006, everthing else =
+Copyright =A9 CodeProject, 1999-2006, All Rights Reserved."=20
+name=3DCopyright><LINK title=3D"CodeProject Lounge Postings"=20
+href=3D"http://www.codeproject.com/webservices/LoungeRSS.aspx"=20
+type=3Dapplication/rss+xml rel=3Dalternate><LINK=20
+title=3D"CodeProject Latest articles - All topics"=20
+href=3D"http://www.codeproject.com/webservices/articlerss.aspx?cat=3D1"=20
+type=3Dapplication/rss+xml rel=3Dalternate><LINK=20
+title=3D"CodeProject Latest articles - MFC / C++"=20
+href=3D"http://www.codeproject.com/webservices/articlerss.aspx?cat=3D2"=20
+type=3Dapplication/rss+xml rel=3Dalternate><LINK=20
+title=3D"CodeProject Latest articles - C#"=20
+href=3D"http://www.codeproject.com/webservices/articlerss.aspx?cat=3D3"=20
+type=3Dapplication/rss+xml rel=3Dalternate><LINK=20
+title=3D"CodeProject Latest articles - ASP.NET"=20
+href=3D"http://www.codeproject.com/webservices/articlerss.aspx?cat=3D4"=20
+type=3Dapplication/rss+xml rel=3Dalternate><LINK=20
+title=3D"CodeProject Latest articles - .NET"=20
+href=3D"http://www.codeproject.com/webservices/articlerss.aspx?cat=3D5"=20
+type=3Dapplication/rss+xml rel=3Dalternate><LINK href=3D"/favicon.ico" =
+type=3Dimage/ico=20
+rel=3Dicon><LINK href=3D"/favicon.ico" rel=3D"SHORTCUT ICON"><LINK=20
+href=3D"http://www.codeproject.com/styles/global.css" type=3Dtext/css=20
+rel=3Dstylesheet>
+<META content=3D"MSHTML 6.00.5600.16384" name=3DGENERATOR></HEAD>
+<BODY style=3D"MARGIN: 0px" oncopy=3D"return copyCode();" text=3Dblack =
+vLink=3Dnavy=20
+aLink=3Dred link=3Dblue bgColor=3Dwhite><!-- COPYRIGHT 2006 I/PRO =
+Corporation ALL RIGHTS RESERVED. - Page view auditing -->
+<SCRIPT language=3DJavaScript type=3Dtext/javascript>
+var LSPT=3D"";
+LSPT +=3D "?durl=3D" + escape(document.URL);
+LSPT +=3D "&hostname=3D" + location.hostname;
+LSPT +=3D "&url=3D" + location.pathname;
+LSPT +=3D "&query=3D" + escape(location.search) + escape(location.hash);
+LSPT +=3D "&referrer=3D" + escape(document.referrer);
+LSPT +=3D "&browser=3D" + escape(navigator.appName);
+LSPT +=3D "&version=3D" + escape(navigator.appVersion);
+LSPT +=3D "&os=3D" + escape(navigator.platform);
+LSPT +=3D "&xdomain=3Dcodeproject.com";
+LSPT +=3D "&custid=3Dcodeproject";
+</SCRIPT>
+
+<SCRIPT type=3Dtext/javascript>
+document.write('<img =
+src=3Dhttp://'+'content.ipro.com/images/pixel.gif'+LSPT+' height=3D"1" =
+width=3D"1" style=3D"position:absolute; top:0px; left:0px">');
+</SCRIPT>
+<NOSCRIPT><IMG style=3D"LEFT: 0px; POSITION: absolute; TOP: 0px" =
+height=3D1 src=3D""=20
+width=3D1> </NOSCRIPT><!-- END I/PRO PAGE TAG -->
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D"100%" border=3D0>
+  <TBODY>
+  <TR>
+    <TD class=3DHeaderLogo><A href=3D"http://www.codeproject.com/"><IMG =
+height=3D90=20
+      alt=3DHome=20
+      =
+src=3D"http://www.codeproject.com/images/standard/codeproject225x90.gif" =
+
+      border=3D0></A></TD>
+    <TD bgColor=3D#ff9900>&nbsp;</TD></TR>
+  <TR>
+    <TD colSpan=3D2>
+      <TABLE class=3DArticleHeader cellSpacing=3D0 cellPadding=3D3 =
+width=3D"100%">
+        <TBODY>
+        <TR vAlign=3Dtop>
+          <TD class=3DsmallText style=3D"PADDING-RIGHT: 10px"><A=20
+            href=3D"http://www.codeproject.com/?cat=3D1">All Topics</A>, =
+<A=20
+            href=3D"http://www.codeproject.com/?cat=3D3">C#</A>, <A=20
+            href=3D"http://www.codeproject.com/?cat=3D5">.NET</A> =
+&gt;&gt; <A=20
+            href=3D"http://www.codeproject.com/csharp/">C# =
+Programming</A>=20
+            &gt;&gt; <A=20
+            href=3D"http://www.codeproject.com/csharp/#COM+Interop">COM=20
+            Interop</A><BR><A=20
+            =
+href=3D"http://www.codeproject.com/csharp/ManagedCOM.asp">http://www.code=
+project.com/csharp/ManagedCOM.asp</A><BR><BR>
+            <DIV style=3D"FONT-WEIGHT: bold; FONT-SIZE: 16pt">Calling =
+Managed .NET=20
+            C# COM Objects from Unmanaged C++ Code</DIV><B>By <A=20
+            =
+href=3D"http://www.codeproject.com/script/Articles/list_articles.asp?user=
+id=3D2261269">Atul=20
+            Mani</A></B>. <BR><BR>
+            <DIV style=3D"FONT-SIZE: 12px">An article on calling managed =
+.NET C#=20
+            COM objects from unmanaged C++ code.</DIV></TD>
+          <TD class=3DsmallText style=3D"WIDTH: 200px">C++, =
+C#<BR>Windows (NT4,=20
+            Win2K, WinXP), .NET<BR>Win32, VS<BR>Dev<BR><SPAN=20
+            style=3D"PADDING-RIGHT: 2ex">Posted</SPAN>: <B>11 Jan=20
+            2006</B><BR><SPAN style=3D"PADDING-RIGHT: 3ex">Views</SPAN>: =
+
+            <B>16,112</B> </TD></TR></TD></TR></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=3D0 cellPadding=3D0 border=3D0>
+        <TBODY>
+        <TR vAlign=3Dtop>
+          <TD width=3D"100%">
+            <TABLE width=3D"100%">
+              <TBODY>
+              <TR vAlign=3Dtop>
+                <TD class=3DSmallText noWrap></TD>
+                <TD noWrap align=3Dright><A name=3D__top></A>
+                  <TABLE>
+                    <TBODY>
+                    <TR>
+                      <TD class=3DsmallText align=3Dright>15 votes for =
+this=20
+                        article.</TD>
+                      <TD>
+                        <TABLE cellSpacing=3D0 cellPadding=3D0 =
+border=3D2>
+                          <TBODY>
+                          <TR>
+                            <TD><IMG height=3D5=20
+                              =
+src=3D"http://www.codeproject.com/script/images/red.gif"=20
+                              width=3D20 border=3D0></TD>
+                            <TD><IMG height=3D5=20
+                              =
+src=3D"http://www.codeproject.com/script/images/red.gif"=20
+                              width=3D20 border=3D0></TD>
+                            <TD><IMG height=3D5=20
+                              =
+src=3D"http://www.codeproject.com/script/images/red.gif"=20
+                              width=3D20 border=3D0></TD>
+                            <TD><IMG height=3D5=20
+                              =
+src=3D"http://www.codeproject.com/script/images/red.gif"=20
+                              width=3D12 border=3D0><IMG height=3D5=20
+                              =
+src=3D"http://www.codeproject.com/script/images/white.gif"=20
+                              width=3D8 border=3D0></TD>
+                            <TD><IMG height=3D5=20
+                              =
+src=3D"http://www.codeproject.com/script/images/white.gif"=20
+                              width=3D20 =
+border=3D0></TD></TR></TBODY></TABLE></TD></TR>
+                    <TR>
+                      <TD class=3DsmallText align=3Dright colSpan=3D2><A =
+
+                        title=3D"Calculated as rating x Log10(# votes)"=20
+                        =
+href=3D"http://www.codeproject.com/script/articles/top_articles.asp?st=3D=
+2">Popularity:=20
+                        4.23</A>. Rating: <B>3.6</B> out of=20
+                  =
+5.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD class=3DArticlePane><SPAN id=3DintelliTXT>
+            <DIV id=3Dcontentdiv><!-- Article Starts -->
+            <UL class=3Ddownload>
+              <LI><A=20
+              =
+href=3D"http://www.codeproject.com/csharp/ManagedCOM/ManagedCOM.zip">Down=
+load=20
+              source - 5.21 Kb</A> </LI></UL>
+            <H2>Preface</H2>
+            <P>COM Interoperability is the feature of Microsoft .NET =
+that allows=20
+            managed .NET code to interact with unmanaged code using =
+Microsoft's=20
+            Component Object Model semantics.</P>
+            <P>This article is geared towards C# programmers who are =
+familiar=20
+            with developing COM components and familiar with the concept =
+of an=20
+            interface. I'll review some background on COM, explain how =
+C#=20
+            interacts with COM, and then show how to design .NET =
+components to=20
+            smoothly interact with COM.</P>
+            <P>For those die-hard COM experts, there will be some things =
+in this=20
+            article that are oversimplified, but the concepts, as =
+presented, are=20
+            the important points to know for those developers =
+supplementing=20
+            their COM code with .NET components.</P>
+            <H2>Introduction</H2>
+            <H3>.NET Interfaces and Classes</H3>
+            <P>The basis for accessing .NET objects either from other =
+.NET code=20
+            or from unmanaged code is the Class. A .NET class represents =
+the=20
+            encapsulation of the functionality (methods and properties) =
+that the=20
+            programmer wants to expose to other code. A .NET interface =
+is the=20
+            abstract declaration of the methods and properties that =
+classes=20
+            which implement the interface are expected to provide in =
+their=20
+            implementations. Declaring a .NET interface doesn't generate =
+any=20
+            code, and a .NET interface is not callable directly. But any =
+class=20
+            which implements ("inherits") the interface must provide the =
+code=20
+            that implements each of the methods and properties declared =
+in the=20
+            interface definition.</P>
+            <P>Microsoft realized that the very first version of .NET =
+needed a=20
+            way to work with the existing Windows technology used to =
+develop=20
+            applications over the past 8+ years: COM. With that in mind, =
+
+            Microsoft added support in the .NET runtime for =
+interoperating with=20
+            COM - simply called "COM Interop". The support goes both =
+ways: .NET=20
+            code can call COM components, and COM code can call .NET=20
+            components.</P>
+            <H2>Using the code</H2>
+            <H3>Steps to create a Managed .NET C# COM Object:</H3>
+            <OL>
+              <LI>Open VS.NET2003-&gt;New Project-&gt;Visual C#=20
+              Projects-&gt;Class Library.=20
+              <LI>Project name: MyInterop.=20
+              <LI>Create <I>MyDoNetClass.cs</I> file, and add the =
+following=20
+              lines of code: <PRE lang=3Dcs><SPAN =
+class=3Dcs-keyword>using</SPAN> System.Runtime.InteropServices;
+<SPAN class=3Dcs-keyword>using</SPAN> System.Windows.Forms;</PRE>
+              <LI>Create an Interface <CODE>IMyDotNetInterface</CODE>.=20
+              <LI>Create a class <CODE>MyDoNetClass</CODE>.=20
+              <LI>Add the following line for <CODE>MyDotNetClass</CODE>: =
+<PRE lang=3Dcs>[ClassInterface(ClassInterfaceType.None)]</PRE></LI></OL>
+            <P>Although a .NET class is not directly invokable from =
+unmanaged=20
+            code, Microsoft has provided the capability of wrapping a =
+.NET=20
+            interface in an unmanaged layer of code that exposes the =
+methods and=20
+            properties of the .NET class as if the class were a COM =
+object.=20
+            There are two requirements for making a .NET class visible =
+to=20
+            unmanaged code as a COM object:</P>
+            <H3>Requirement 1:</H3>
+            <H4>You have to add GUIDs - Globally Unique Identifiers - =
+into your=20
+            code for the interface and the class separately, through a =
+GUID=20
+            tool.</H4>
+            <P><IMG height=3D337=20
+            =
+src=3D"http://www.codeproject.com/csharp/ManagedCOM/ManagedCOM.gif"=20
+            width=3D373></P>
+            <OL start=3D7>
+              <LI>Now, create a GUID for the Interface, and add the =
+following=20
+              line for the interface: <PRE lang=3Dcs>[Guid(<SPAN =
+class=3Dcpp-string>"03AD5D2D-2AFD-439f-8713-A4EC0705B4D9"</SPAN>)]</PRE>
+              <LI>Now, create a GUID for the class, and add the =
+following line=20
+              for the class: <PRE lang=3Dcs>[Guid(<SPAN =
+class=3Dcpp-string>"0490E147-F2D2-4909-A4B8-3533D2F264D0"</SPAN>)]</PRE>
+              <LI>Your code will look like: <PRE lang=3Dcs><SPAN =
+class=3Dcs-keyword>using</SPAN> System;
+<SPAN class=3Dcs-keyword>using</SPAN> System.Runtime.InteropServices;
+<SPAN class=3Dcs-keyword>using</SPAN> System.Windows.Forms;
+
+<SPAN class=3Dcs-keyword>namespace</SPAN> MyInterop
+{
+    [Guid(<SPAN =
+class=3Dcpp-string>"03AD5D2D-2AFD-439f-8713-A4EC0705B4D9"</SPAN>)]
+    <SPAN class=3Dcs-keyword>interface</SPAN> IMyDotNetInterface
+    {
+        <SPAN class=3Dcs-keyword>void</SPAN> ShowCOMDialog();
+    }
+    =20
+    [ClassInterface(ClassInterfaceType.None)]
+    [Guid(<SPAN =
+class=3Dcpp-string>"0490E147-F2D2-4909-A4B8-3533D2F264D0"</SPAN>)]
+    <SPAN class=3Dcs-keyword>class</SPAN> MyDotNetClass : =
+IMyDotNetInterface
+    {
+        <SPAN class=3Dcs-comment>// Need a public default constructor =
+for COM Interop.</SPAN>
+        <SPAN class=3Dcs-keyword>public</SPAN> MyDotNetClass()
+        {}
+        <SPAN class=3Dcs-keyword>public</SPAN> <SPAN =
+class=3Dcs-keyword>void</SPAN> ShowCOMDialog()
+        {
+            System.Windows.Forms.MessageBox.Show(=93I am a<SPAN =
+class=3Dcpp-string>" +=20
+                  "</SPAN>  Managed DotNET C# COM Object Dialog=94);
+        }
+    }
+}</PRE>
+              <LI>Compile the solution.=20
+              <LI>You will see inside the project =
+directory-&gt;obj-&gt;debug=20
+              directory, the file =93<I>MyInterop.dll</I>=94 generated =
+after=20
+              compilation. </LI></OL>
+            <H3>Requirement 2:</H3>
+            <H4>Registration of the COM Class and Interfaces</H4>
+            <P>For a COM class to be accessible by the client at =
+runtime, the=20
+            COM infrastructure must know how to locate the code that =
+implements=20
+            the COM class. COM doesn't know about .NET classes, but .NET =
+
+            provides a general "surrogate" DLL - <I>mscoree.dll</I> -- =
+which=20
+            acts as the wrapper and intermediary between the COM client =
+and the=20
+            .NET class.</P>
+            <OL start=3D12>
+              <LI>Hard-code a specific version number in your=20
+              <CODE>AssemblyVersion</CODE> attribute in the=20
+              <I>AssemblyInfo.cs</I> file which is in your project.=20
+              <P>Example:</P><PRE lang=3Dcs>[assembly: =
+AssemblyVersion(<SPAN class=3Dcpp-string>"1.0.0.0"</SPAN>)]</PRE>
+              <LI>Create a strong-name key pair for your assembly and =
+point to=20
+              it via the <CODE>AssemblyKeyFile</CODE> attribute in the=20
+              <I>AssemblyInfo.cs</I> file which is in your project. =
+Example: <PRE lang=3Dtext>sn -k TestKeyPair.snk</PRE><PRE =
+lang=3Dcs>[assembly: AssemblyKeyFile(<SPAN =
+class=3Dcpp-string>"TestKeyPair.snk"</SPAN>)]</PRE>
+              <LI>Add your assembly to the GAC using the following =
+command: <PRE lang=3Dtext>gacutil /i MyInterop.dll</PRE>
+              <LI>Register your assembly for COM by using the REGASM =
+command=20
+              along with the "/tlb" option to generate a COM type =
+library. <PRE lang=3Dtext>REGASM MyInterop.dll =
+/tlb:com.MyInterop.tlb</PRE>
+              <LI>Close the C# project. </LI></OL>
+            <H3>Steps to create an Unmanaged C++ application to call a =
+.NET=20
+            Managed C# COM</H3>
+            <OL>
+              <LI>Open VS.NET2003-&gt;New Project-&gt;Visual C++=20
+              Projects-&gt;Win32-&gt;Win32 Console Project.=20
+              <LI>Name: DotNet_COM_Call.=20
+              <LI>Include the following line in your =
+<I>DoNet_COM_Call.cpp</I>=20
+              file: <PRE><SPAN class=3Dcpp-preprocessor>#import =
+=93&lt;Full Path&gt;\com.MyInterop.tlb" named_guids =
+raw_interfaces_only</SPAN></PRE>
+              <LI>Compile the solution.=20
+              <LI>It will generate a =93<I>com.myinterop.tlh</I>=94 file =
+into your=20
+              project-&gt;debug directory.=20
+              <LI>You can open this file and see the contents. This is =
+basically=20
+              the proxy code of the C# COM code.=20
+              <LI>Now, you can write the code to call the .NET Managed =
+COM.=20
+              <LI>Please add the following lines of code before calling =
+the COM=20
+              exported functions: <PRE>CoInitialize(NULL);   <SPAN =
+class=3Dcpp-comment>//Initialize all COM Components</SPAN>
+   =20
+<SPAN class=3Dcpp-comment>// =
+&lt;namespace&gt;::&lt;InterfaceName&gt;</SPAN>
+MyInterop::IMyDotNetInterfacePtr pDotNetCOMPtr;
+
+<SPAN class=3Dcpp-comment>// CreateInstance parameters</SPAN>
+<SPAN class=3Dcpp-comment>// e.g. CreateInstance =
+(&lt;namespace::CLSID_&lt;ClassName&gt;)</SPAN>
+HRESULT hRes =3D=20
+  pDotNetCOMPtr.CreateInstance(MyInterop::CLSID_MyDotNetClass);
+<SPAN class=3Dcpp-keyword>if</SPAN> (hRes =3D=3D S_OK)
+{
+    BSTR str;
+    pDotNetCOMPtr-&gt;ShowCOMDialog ();
+    <SPAN class=3Dcpp-comment>//call .NET COM exported function =
+ShowDialog ()</SPAN>
+}
+
+CoUninitialize ();   <SPAN class=3Dcpp-comment>//DeInitialize all COM =
+Components</SPAN></PRE>
+              <LI>Run this console application.=20
+              <LI>Expected result: a managed code (C# ) dialog should =
+appear=20
+              with the string =93I am a Managed DotNET C# COM Object =
+Dialog=94.=20
+            </LI></OL>
+            <H2>Points of Interest</H2>
+            <P>While creating an Interface for COM exported functions, =
+creating=20
+            GUIDs for the Interface and the class and registering the =
+class are=20
+            required steps, and doing all this is always interesting and =
+fun.=20
+            Calling parameterized exported functions also is very=20
+            interesting.</P><!-- Article Ends --></DIV></SPAN>
+            <SCRIPT =
+src=3D"http://www.codeproject.com/script/togglePre.js"=20
+            type=3Dtext/javascript></SCRIPT>
+
+            <H2>About Atul Mani</H2>
+            <DIV style=3D"OVERFLOW: hidden">
+            <TABLE border=3D0>
+              <TBODY>
+              <TR vAlign=3Dtop>
+                <TD class=3DsmallText noWrap><BR></TD>
+                <TD class=3DsmallText>Atul Mani Tripathi has been a =
+professional=20
+                  developer since 1997 and working as a senior =
+consultant with=20
+                  Cognizant Technology Solutions (CTS) .<BR><BR>Most of =
+the=20
+                  time, his focus is on creating a clean and simple =
+solution to=20
+                  development problems. He is a C++, Visual C++ and C# =
+(Dot NET)=20
+                  guy who loves Visual Studio, Google, Code Project and=20
+                  developing personal projects.<BR><BR>
+                  <P class=3DsmallText>Click <A=20
+                  =
+href=3D"http://www.codeproject.com/script/profile/whos_who.asp?vt=3Darts&=
+amp;id=3D2261269">here</A>=20
+                  to view Atul Mani's online=20
+            profile.</P></TD></TR></TBODY></TABLE></DIV><BR>
+            <TABLE cellPadding=3D0 width=3D"100%" bgColor=3D#ff9900>
+              <TBODY>
+              <TR>
+                <TD><IMG height=3D60=20
+                  =
+src=3D"http://www.codeproject.com/images/bannerlogo.gif"=20
+                  width=3D468 border=3D0></TD></TR></TBODY></TABLE>
+            <H2>Discussions and Feedback</H2>
+            <BLOCKQUOTE><IMG=20
+              =
+src=3D"http://www.codeproject.com/script/images/news_unselected.gif">=20
+              <B>18 comments</B> have been posted for this article. =
+Visit <B><A=20
+              =
+href=3D"http://www.codeproject.com/csharp/ManagedCOM.asp">http://www.code=
+project.com/csharp/ManagedCOM.asp</A></B>=20
+              to post and view comments on this article.</BLOCKQUOTE>
+            <TABLE cellSpacing=3D5 width=3D"100%">
+              <TBODY>
+              <TR vAlign=3Dtop>
+                <TD class=3DsmallText>Updated: 11 Jan 2006 </TD>
+                <TD class=3DSmallText align=3Dright>Article content =
+copyright Atul=20
+                  Mani, 2006<BR>everything else Copyright =A9 <A=20
+                  =
+href=3D"mailto:webmaster@codeproject.com">CodeProject</A>,=20
+                  1999-2006</A>. =
+</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <SCRIPT=20
+      =
+src=3D"http://codeproject.us.intellitxt.com/intellitxt/front.asp?ipid=3D5=
+102"=20
+      type=3Dtext/javascript></SCRIPT>
+  </TR></TBODY></TABLE></BODY></HTML>
+
+------=_NextPart_000_0000_01C6F68A.C3BD2330
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.codeproject.com/images/standard/codeproject225x90.gif
+
+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
+8Ww+/6x12jKfzXW6XtssdtxhBwIAOw==
+
+------=_NextPart_000_0000_01C6F68A.C3BD2330
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.codeproject.com/script/images/red.gif
+
+R0lGODlhAQABALMAAP8zAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAACwAAAAAAQABAAAEAhBEADs=
+
+------=_NextPart_000_0000_01C6F68A.C3BD2330
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.codeproject.com/script/images/white.gif
+
+R0lGODlhAQABALMAAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAACwAAAAAAQABAAAEAhBEADs=
+
+------=_NextPart_000_0000_01C6F68A.C3BD2330
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.codeproject.com/csharp/ManagedCOM/ManagedCOM.gif
+
+R0lGODdhdQFRAfcAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwMDcwKbK8EAgAGAgAIAgAKAgAMAg
+AOAgAABAACBAAEBAAGBAAIBAAKBAAMBAAOBAAABgACBgAEBgAGBgAIBgAKBgAMBgAOBgAACAACCA
+AECAAGCAAICAAKCAAMCAAOCAAACgACCgAECgAGCgAICgAKCgAMCgAOCgAADAACDAAEDAAGDAAIDA
+AKDAAMDAAODAAADgACDgAEDgAGDgAIDgAKDgAMDgAODgAAAAQCAAQEAAQGAAQIAAQKAAQMAAQOAA
+QAAgQCAgQEAgQGAgQIAgQKAgQMAgQOAgQABAQCBAQEBAQGBAQIBAQKBAQMBAQOBAQABgQCBgQEBg
+QGBgQIBgQKBgQMBgQOBgQACAQCCAQECAQGCAQICAQKCAQMCAQOCAQACgQCCgQECgQGCgQICgQKCg
+QMCgQOCgQADAQCDAQEDAQGDAQIDAQKDAQMDAQODAQADgQCDgQEDgQGDgQIDgQKDgQMDgQODgQAAA
+gCAAgEAAgGAAgIAAgKAAgMAAgOAAgAAggCAggEAggGAggIAggKAggMAggOAggABAgCBAgEBAgGBA
+gIBAgKBAgMBAgOBAgABggCBggEBggGBggIBggKBggMBggOBggACAgCCAgECAgGCAgICAgKCAgMCA
+gOCAgACggCCggECggGCggICggKCggMCggOCggADAgCDAgEDAgGDAgIDAgKDAgMDAgODAgADggCDg
+gEDggGDggIDggKDggMDggODggAAAwCAAwEAAwGAAwIAAwKAAwMAAwOAAwAAgwCAgwEAgwGAgwIAg
+wKAgwMAgwOAgwABAwCBAwEBAwGBAwIBAwKBAwMBAwOBAwABgwCBgwEBgwGBgwIBgwKBgwMBgwOBg
+wACAwCCAwECAwGCAwICAwKCAwMCAwOCAwACgwCCgwECgwGCgwICgwKCgwMCgwOCgwADAwCDAwEDA
+wGDAwIDAwKDAwP/78KCgpICAgP8AAAD/AP//AAAA//8A/wD//////yH5BAAAAAAALAAAAAB1AVEB
+AAj/ABEIHEiwoMGDCBMqXMiwocOHECNKnEixosWLGDNqpEhKCgJEIEOKBJmopMmTkVKqXMmypcuX
+MGFKmklTkqabOHPq3MmzJ09tQIMKHbqt6LijSJMqXcq0qdOnStexm0q1qtWrWLNq3WqVnlev9cKK
+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
+TjvnDAgAOw==
+
+------=_NextPart_000_0000_01C6F68A.C3BD2330
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.codeproject.com/images/bannerlogo.gif
+
+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
+fCAqI3CLS24xI6kCxWLcxnEYBAA7
+
+------=_NextPart_000_0000_01C6F68A.C3BD2330
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.codeproject.com/script/images/news_unselected.gif
+
+R0lGODlhDAAQALMAAAAAAAAAgIAAAP8AAMAAwP//AICAgMDAwP///wAAAAAAAAAAAAAAAAAAAAAA
+AAAAACH5BAEAAAQALAAAAAAMABAAAARKkMg5x6B4lCGwPIIFeIcGdEaqWiJhIDAccuMbIwegGy4S
+/DhAsHcrIAo5IsxoTL5+0KNzeTwiaz5ooHB1Ma1c52FMJo906LSOEAEAOw==
+
+------=_NextPart_000_0000_01C6F68A.C3BD2330
+Content-Type: text/css;
+	charset="gb2312"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.codeproject.com/styles/global.css
+
+BODY {
+	FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, =
+sans-serif
+}
+P {
+	FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, =
+sans-serif
+}
+H1 {
+	FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, =
+sans-serif
+}
+H2 {
+	FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, =
+sans-serif
+}
+H3 {
+	FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, =
+sans-serif
+}
+H4 {
+	FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, =
+sans-serif
+}
+H5 {
+	FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, =
+sans-serif
+}
+H6 {
+	FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, =
+sans-serif
+}
+LI {
+	FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, =
+sans-serif
+}
+TD {
+	FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, =
+sans-serif
+}
+TH {
+	FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, =
+sans-serif
+}
+DD {
+	FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, =
+sans-serif
+}
+DT {
+	FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: Verdana, Helvetica, Arial, =
+sans-serif
+}
+BODY {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+LI {
+	LIST-STYLE-IMAGE: none
+}
+UL {
+	LIST-STYLE-IMAGE: none
+}
+OL {
+	LIST-STYLE-IMAGE: none
+}
+H1 {
+	FONT-WEIGHT: bold
+}
+H2 {
+	FONT-WEIGHT: bold
+}
+H3 {
+	FONT-WEIGHT: bold
+}
+H4 {
+	FONT-WEIGHT: bold
+}
+H5 {
+	FONT-WEIGHT: bold
+}
+TH {
+	FONT-WEIGHT: bold
+}
+H2 {
+	COLOR: #ff9900
+}
+H3 {
+	COLOR: #ff9900
+}
+H5 {
+	COLOR: #ff9900
+}
+H1 {
+	FONT-SIZE: 16pt
+}
+H2 {
+	FONT-SIZE: 13pt
+}
+H3 {
+	FONT-SIZE: 11pt; FONT-FAMILY: Arial, sans-serif
+}
+H4 {
+	FONT-SIZE: 10pt; MARGIN-BOTTOM: 2px
+}
+H5 {
+	FONT-SIZE: 9pt; MARGIN-BOTTOM: 2px
+}
+H6 {
+	FONT-WEIGHT: normal; FONT-SIZE: 65%; COLOR: #626262
+}
+DD {
+	MARGIN-LEFT: 20px
+}
+PRE {
+	PADDING-RIGHT: 7pt; PADDING-LEFT: 7pt; PADDING-BOTTOM: 7pt; FONT: 9pt =
+"Courier New", Courier, mono; OVERFLOW: auto; PADDING-TOP: 7pt; =
+WHITE-SPACE: pre; BACKGROUND-COLOR: #fbedbb
+}
+CODE {
+	COLOR: #990000; FONT-FAMILY: "Courier New", Courier, mono
+}
+A:link {
+	TEXT-DECORATION: none
+}
+A:visited {
+	TEXT-DECORATION: none
+}
+A:active {
+	TEXT-DECORATION: underline
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+TT.equation {
+	FONT-SIZE: 10pt; FONT-STYLE: italic; FONT-FAMILY: 'Times New Roman', =
+serif; WHITE-SPACE: pre
+}
+.MenuCat {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 5px; =
+FONT-WEIGHT: bold; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 12px; =
+BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 2px; MARGIN: 0px; =
+TEXT-TRANSFORM: uppercase; COLOR: #ffffff; PADDING-TOP: 2px; =
+FONT-FAMILY: Arial,Verdana; BACKGROUND-COLOR: #333; BORDER-RIGHT-WIDTH: =
+0px
+}
+.MenuGroup {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; =
+FONT-WEIGHT: normal; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; =
+PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 160px; PADDING-TOP: 0px; =
+FONT-FAMILY: Tahoma, Arial, sans-serif; POSITION: relative; TOP: 0px; =
+BACKGROUND-COLOR: #ffcc99; BORDER-RIGHT-WIDTH: 0px
+}
+.MenuSubCat {
+	BORDER-RIGHT: #fb3 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #fb3 0px =
+solid; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 8pt; =
+PADDING-BOTTOM: 1px; MARGIN: 0px; BORDER-LEFT: #fb3 1px solid; COLOR: =
+#000000; PADDING-TOP: 1px; BORDER-BOTTOM: #fb3 1px solid; FONT-FAMILY: =
+Arial; BACKGROUND-COLOR: #ffcc66
+}
+.MenuSubCat A {
+	COLOR: #000000
+}
+.MenuSubCat:hover {
+	COLOR: #000000; BACKGROUND-COLOR: #ffe0b3
+}
+.MI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 3px; FONT-WEIGHT: normal; FONT-SIZE: =
+8pt; PADDING-BOTTOM: 1px; WIDTH: 155px! important; COLOR: black; =
+PADDING-TOP: 1px; FONT-FAMILY: Verdana, Arial, sans-serif; =
+BACKGROUND-COLOR: #ffe0b3
+}
+.MI A {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 3px; FONT-WEIGHT: normal; FONT-SIZE: =
+8pt; PADDING-BOTTOM: 1px; WIDTH: 155px! important; COLOR: black; =
+PADDING-TOP: 1px; FONT-FAMILY: Verdana, Arial, sans-serif; =
+BACKGROUND-COLOR: #ffe0b3
+}
+.MIS {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 3px; FONT-WEIGHT: normal; FONT-SIZE: =
+8pt; PADDING-BOTTOM: 1px; WIDTH: 155px! important; COLOR: black; =
+PADDING-TOP: 1px; FONT-FAMILY: Verdana, Arial, sans-serif; =
+BACKGROUND-COLOR: #ffe0b3
+}
+.MIS A {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 3px; FONT-WEIGHT: normal; FONT-SIZE: =
+8pt; PADDING-BOTTOM: 1px; WIDTH: 155px! important; COLOR: black; =
+PADDING-TOP: 1px; FONT-FAMILY: Verdana, Arial, sans-serif; =
+BACKGROUND-COLOR: #ffe0b3
+}
+.MI A:hover {
+	BACKGROUND-COLOR: #fffaf2; TEXT-DECORATION: none
+}
+.userNavText {
+	FONT-SIZE: 8pt; COLOR: black; FONT-FAMILY: verdana,Sans-Serif; =
+LETTER-SPACING: -1px
+}
+.userNavText A {
+	FONT-SIZE: 8pt; COLOR: black; FONT-FAMILY: verdana,Sans-Serif; =
+LETTER-SPACING: -1px
+}
+.HeaderLogo {
+	BACKGROUND-COLOR: #ff9900
+}
+.HeaderBanner {
+	VERTICAL-ALIGN: middle; WIDTH: 100%; BACKGROUND-COLOR: #ff9900; =
+TEXT-ALIGN: right
+}
+.MainBlockHeader {
+	BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: =
+#cccccc 1px solid; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: =
+13px; PADDING-BOTTOM: 2px; TEXT-TRANSFORM: uppercase; BORDER-LEFT: =
+#cccccc 1px solid; COLOR: black; PADDING-TOP: 2px; BORDER-BOTTOM: =
+#cccccc 1px solid; FONT-FAMILY: Arial,Verdana; WHITE-SPACE: nowrap; =
+BACKGROUND-COLOR: #efefef
+}
+.MainBlockContent {
+	BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: =
+#cccccc 1px; PADDING-LEFT: 5px; FONT-SIZE: 11px; MARGIN-BOTTOM: 10px; =
+PADDING-BOTTOM: 5px; BORDER-LEFT: #cccccc 1px solid; PADDING-TOP: 5px; =
+BORDER-BOTTOM: #cccccc 1px solid
+}
+.FeatureBlockHeader {
+	BORDER-RIGHT: #ff9900 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: =
+#ff9900 1px solid; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: =
+13px; PADDING-BOTTOM: 2px; TEXT-TRANSFORM: uppercase; BORDER-LEFT: =
+#ff9900 1px solid; COLOR: #990000; PADDING-TOP: 2px; BORDER-BOTTOM: =
+#ff9900 1px solid; FONT-FAMILY: Arial,Verdana; WHITE-SPACE: nowrap; =
+BACKGROUND-COLOR: #ffe0b3
+}
+.FeatureBlockHeader A {
+	COLOR: #990000
+}
+.FeatureBlockContent {
+	BORDER-RIGHT: #ff9900 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: =
+#ff9900 1px; PADDING-LEFT: 5px; FONT-SIZE: 11px; MARGIN-BOTTOM: 10px; =
+PADDING-BOTTOM: 5px; OVERFLOW: hidden; BORDER-LEFT: #ff9900 1px solid; =
+PADDING-TOP: 5px; BORDER-BOTTOM: #ff9900 1px solid; BACKGROUND-COLOR: =
+#fffaf2
+}
+.BlockExtraText {
+	PADDING-LEFT: 20px; FONT-SIZE: 11px; TEXT-TRANSFORM: none
+}
+.TitleBar {
+	MARGIN-TOP: 10px; FONT-WEIGHT: bold; FONT-SIZE: 135%; COLOR: #ff9900; =
+TEXT-ALIGN: left
+}
+.JoinHeader {
+	BORDER-RIGHT: black 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: black =
+1px solid; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 13pt; =
+PADDING-BOTTOM: 5px; MARGIN: 5pt; BORDER-LEFT: black 1px solid; =
+PADDING-TOP: 5px; BORDER-BOTTOM: black 1px solid; WHITE-SPACE: nowrap; =
+BACKGROUND-COLOR: #ffb443
+}
+.JoinHeader A {
+	COLOR: #990000; HEIGHT: 20px
+}
+.ShopHeader {
+	BORDER-RIGHT: black 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: black =
+1px solid; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 13pt; =
+PADDING-BOTTOM: 5px; MARGIN: 5pt; BORDER-LEFT: black 1px solid; =
+PADDING-TOP: 5px; BORDER-BOTTOM: black 1px solid; WHITE-SPACE: nowrap; =
+BACKGROUND-COLOR: #76ab40
+}
+.ShopHeader A {
+	FILTER: Shadow(color=3D#000000,strength=3D1,direction=3D135); COLOR: =
+white; HEIGHT: 20px
+}
+.MemberNavBar {
+	BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #ffcc66
+}
+.SiteNavBar TD {
+	BORDER-RIGHT: #488e00 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: =
+#488e00 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 0px; MARGIN: 0px; =
+BORDER-LEFT: #488e00 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #488e00 =
+1px solid; POSITION: relative; BACKGROUND-COLOR: #488e00
+}
+.SiteNavBar A {
+	BORDER-RIGHT: #488e00 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: =
+#488e00 1px solid; PADDING-LEFT: 1px; FONT-WEIGHT: bold; FONT-SIZE: =
+12px; PADDING-BOTTOM: 1px; BORDER-LEFT: #488e00 1px solid; COLOR: white; =
+PADDING-TOP: 1px; BORDER-BOTTOM: #488e00 1px solid; HEIGHT: 16px
+}
+.SiteNavBar A:hover {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; PADDING-BOTTOM: 1px; COLOR: =
+black; PADDING-TOP: 1px; BACKGROUND-COLOR: #c3de6c; TEXT-DECORATION: =
+none
+}
+TD.SelCat {
+	BORDER-LEFT-COLOR: #488e00; BORDER-BOTTOM-COLOR: #488e00; =
+BORDER-TOP-COLOR: #488e00; BACKGROUND-COLOR: #c3de6c; =
+BORDER-RIGHT-COLOR: #488e00
+}
+TD.SelCat A {
+	BORDER-LEFT-COLOR: #c3de6c; BORDER-BOTTOM-COLOR: #c3de6c; COLOR: black; =
+BORDER-TOP-COLOR: #c3de6c; BACKGROUND-COLOR: #c3de6c; =
+BORDER-RIGHT-COLOR: #c3de6c
+}
+.SearchHeaderBar {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; MARGIN: =
+0px; PADDING-TOP: 3px; BORDER-BOTTOM: #cccccc 1px solid; =
+BACKGROUND-COLOR: #efefef
+}
+.LHNavBar {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; =
+VERTICAL-ALIGN: top; WIDTH: 160px; PADDING-TOP: 3px; BACKGROUND-COLOR: =
+#ff9900
+}
+.ContentPane {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; MIN-HEIGHT: 300px; =
+VERTICAL-ALIGN: top; ; WIDTH: expression(document.body.clientWidth < =
+973? "813" : document.body.clientWidth-160); POSITION: relative; ; =
+HEIGHT: expression(this.height < 300? "300" : "auto")
+}
+.ArticlePane {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; VERTICAL-ALIGN: top; WIDTH: =
+100%; POSITION: relative
+}
+.RHFeatureBar {
+	MAX-WIDTH: 160px; VERTICAL-ALIGN: top; OVERFLOW: hidden; WIDTH: 160px
+}
+.ArticleHeader {
+	BORDER-BOTTOM: #cccccc 1px solid
+}
+.ArticleUneditedHeader {
+	BORDER-BOTTOM: #cccccc 1px solid
+}
+.ArticlePurgatoryHeader {
+	BORDER-BOTTOM: #cccccc 1px solid
+}
+.ArticleHeader {
+	BACKGROUND-COLOR: #fbedbb
+}
+.ArticleUneditedHeader {
+	BACKGROUND-COLOR: #dce2f5
+}
+.ArticlePurgatoryHeader {
+	BACKGROUND-COLOR: #e2e2e2
+}
+.precollapse {
+	DISPLAY: inline; FONT-WEIGHT: bold; FONT-SIZE: 7pt; BORDER-BOTTOM: =
+#cccccc 1px solid; BACKGROUND-COLOR: #fbedbb
+}
+.formButton {
+	FONT-WEIGHT: 700; FONT-SIZE: 90%; BORDER-LEFT-COLOR: #fbedbb; =
+BORDER-BOTTOM-COLOR: #fbedbb; COLOR: white; BORDER-TOP-COLOR: #fbedbb; =
+BACKGROUND-COLOR: #e08900; BORDER-RIGHT-COLOR: #fbedbb
+}
+.SmallText {
+	FONT-SIZE: 8pt
+}
+.tinyText {
+	FONT-SIZE: 7pt
+}
+UL.InfoList {
+	MARGIN-TOP: 5px; PADDING-LEFT: 15px; MARGIN-BOTTOM: 5px; MARGIN-LEFT: =
+0px
+}
+UL.InfoList LI {
+	PADDING-BOTTOM: 5px
+}
+UL.download {
+	MARGIN-LEFT: 1.5em
+}
+UL.download LI {
+	PADDING-LEFT: 0.5em; FONT-SIZE: 9pt; LIST-STYLE-IMAGE: =
+url(/images/download.gif); FONT-FAMILY: Verdana, Arial, Helvetica, =
+sans-serif
+}
+LI.download {
+	PADDING-LEFT: 0.5em; FONT-SIZE: 9pt; LIST-STYLE-IMAGE: =
+url(/images/download.gif); FONT-FAMILY: Verdana, Arial, Helvetica, =
+sans-serif
+}
+UL.delegate LI {
+	LIST-STYLE-IMAGE: url(/images/symbols/delegate.gif)
+}
+LI.delegate {
+	LIST-STYLE-IMAGE: url(/images/symbols/delegate.gif)
+}
+UL.enum LI {
+	LIST-STYLE-IMAGE: url(/images/symbols/Enum.GIF)
+}
+LI.enum {
+	LIST-STYLE-IMAGE: url(/images/symbols/Enum.GIF)
+}
+UL.event LI {
+	LIST-STYLE-IMAGE: url(/images/symbols/event.GIF)
+}
+LI.event {
+	LIST-STYLE-IMAGE: url(/images/symbols/event.GIF)
+}
+UL.interface LI {
+	LIST-STYLE-IMAGE: url(/images/symbols/interface.GIF)
+}
+LI.interface {
+	LIST-STYLE-IMAGE: url(/images/symbols/interface.GIF)
+}
+UL.literal LI {
+	LIST-STYLE-IMAGE: url(/images/symbols/literal.GIF)
+}
+LI.literal {
+	LIST-STYLE-IMAGE: url(/images/symbols/literal.GIF)
+}
+UL.method LI {
+	LIST-STYLE-IMAGE: url(/images/symbols/method.GIF)
+}
+LI.method {
+	LIST-STYLE-IMAGE: url(/images/symbols/method.GIF)
+}
+UL.namespace LI {
+	LIST-STYLE-IMAGE: url(/images/symbols/namespace.GIF)
+}
+LI.namespace {
+	LIST-STYLE-IMAGE: url(/images/symbols/namespace.GIF)
+}
+UL.property LI {
+	LIST-STYLE-IMAGE: url(/images/symbols/property.GIF)
+}
+LI.property {
+	LIST-STYLE-IMAGE: url(/images/symbols/property.GIF)
+}
+UL.struct LI {
+	LIST-STYLE-IMAGE: url(/images/symbols/struct.GIF)
+}
+LI.struct {
+	LIST-STYLE-IMAGE: url(/images/symbols/struct.GIF)
+}
+UL.compactlist LI {
+	FONT-SIZE: 8pt; LIST-STYLE-IMAGE: url(/images/smallarrow.gif); =
+MARGIN-BOTTOM: 0pt; MARGIN-LEFT: -1em; FONT-FAMILY: Verdana, Arial, =
+Helvetica, sans-serif
+}
+LI.compactlist {
+	FONT-SIZE: 8pt; LIST-STYLE-IMAGE: url(/images/smallarrow.gif); =
+MARGIN-BOTTOM: 0pt; MARGIN-LEFT: -1em; FONT-FAMILY: Verdana, Arial, =
+Helvetica, sans-serif
+}
+UL.compactlist {
+	MARGIN-TOP: 5pt; MARGIN-BOTTOM: 5pt
+}
+TEXTAREA#ContentText {
+	BEHAVIOR: url(/styles/lnkutils.htc)
+}
+.messagecontent {
+	FONT: 9.5pt Verdana, "Courier New", Courier, mono
+}
+.Default {
+	FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif
+}
+.forum_link:link {
+	COLOR: #e08900; TEXT-DECORATION: none
+}
+.forum_link:visited {
+	COLOR: #e08900; TEXT-DECORATION: none
+}
+.forum_link:active {
+	COLOR: #e08900; TEXT-DECORATION: none
+}
+.forum_link:hover {
+	COLOR: #e08900; TEXT-DECORATION: underline
+}
+.forum_hilite {
+	BACKGROUND-COLOR: yellow
+}
+.FQ {
+	PADDING-LEFT: 0.6em; MARGIN-BOTTOM: -1em; MARGIN-LEFT: 0.25em; =
+BORDER-LEFT: gray 0.2em solid; COLOR: #556655; MARGIN-RIGHT: 1em
+}
+.FQA {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; MARGIN-LEFT: -0.25em
+}
+.cpp-comment {
+	COLOR: green; FONT-STYLE: italic
+}
+.cs-comment {
+	COLOR: green; FONT-STYLE: italic
+}
+.vb-comment {
+	COLOR: green; FONT-STYLE: italic
+}
+.cpp-keyword {
+	COLOR: blue
+}
+.cs-keyword {
+	COLOR: blue
+}
+.vb-function {
+	COLOR: blue
+}
+.cpp-preprocessor {
+	COLOR: navy
+}
+.cs-preprocessor {
+	COLOR: navy
+}
+.cpp-string {
+	COLOR: purple
+}
+.cs-string {
+	COLOR: purple
+}
+.vb-string {
+	COLOR: purple
+}
+.cpp-literal {
+	COLOR: midnightblue
+}
+.cs-literal {
+	COLOR: midnightblue
+}
+.vb-literal {
+	COLOR: midnightblue
+}
+.vb-keyword {
+	FONT-WEIGHT: normal; COLOR: blue
+}
+.vb-statement {
+	FONT-WEIGHT: normal; COLOR: blue
+}
+TABLE#tblButtonBar {
+	MARGIN-TOP: 1px
+}
+.clsButton {
+	BORDER-RIGHT: #ff9900 1px solid; BORDER-TOP: #ff9900 1px solid; =
+FONT-WEIGHT: bold; FONT-SIZE: 8pt; BORDER-LEFT: #ff9900 1px solid; =
+COLOR: #333300; BORDER-BOTTOM: #ff9900 1px solid; BACKGROUND-COLOR: =
+#ff9900; TEXT-DECORATION: none
+}
+TD.clsButtonBar TABLE.clsButton TD {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; PADDING-BOTTOM: 1px; =
+PADDING-TOP: 1px
+}
+.clsButtonLnk {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; FONT-WEIGHT: bold; FONT-SIZE: =
+8pt; PADDING-BOTTOM: 1px; COLOR: #333300; PADDING-TOP: 1px; =
+TEXT-DECORATION: none
+}
+.clsButtonLnk:hover {
+	COLOR: blue
+}
+.Headline {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; MARGIN-BOTTOM: 5px! important; =
+COLOR: black
+}
+.sidebar {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #ffffff; TEXT-DECORATION: =
+none
+}
+.navbar {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: white; TEXT-DECORATION: none
+}
+BUTTON.toolbar {
+	BORDER-RIGHT: white 1px solid; BORDER-TOP: white 1px solid; FONT-SIZE: =
+9pt; BORDER-LEFT: white 1px solid; BORDER-BOTTOM: white 1px solid; =
+FONT-FAMILY: Verdana, Arial, Tahoma, "MS Sans Serif", sans-serif; =
+BACKGROUND-COLOR: white
+}
+DIV.toolbar {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; BORDER-LEFT-COLOR: #ff9900; =
+BORDER-BOTTOM-COLOR: #ff9900; PADDING-BOTTOM: 2px; BORDER-TOP-COLOR: =
+#ff9900; PADDING-TOP: 1px; BACKGROUND-COLOR: white; BORDER-RIGHT-COLOR: =
+#ff9900
+}
+.navbar:hover {
+	COLOR: blue
+}
+.navbar:active {
+	COLOR: red
+}
+.NavMenuItem:hover {
+	COLOR: blue
+}
+.NavMenuItem:active {
+	COLOR: red
+}
+.AdLink {
+	FONT-SIZE: 8pt; COLOR: black
+}
+A .AdLink {
+	FONT-SIZE: 8pt; COLOR: black
+}
+.infobar {
+	FONT-SIZE: 8pt; MARGIN-LEFT: 0pt; TEXT-INDENT: 0pt
+}
+.infobarList {
+	FONT-SIZE: 8pt; MARGIN-LEFT: 1.5em; TEXT-INDENT: -1.5em
+}
+.InfobarHeader {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; MARGIN-BOTTOM: -10px; COLOR: #ab2600
+}
+.HoverLink {
+	BORDER-RIGHT: #fbedbb 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: =
+#fbedbb 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 8pt; PADDING-BOTTOM: =
+1px; BORDER-LEFT: #fbedbb 1px solid; PADDING-TOP: 1px; BORDER-BOTTOM: =
+#fbedbb 1px solid; BACKGROUND-COLOR: #fbedbb; TEXT-DECORATION: none
+}
+A.HoverLink {
+	COLOR: blue; TEXT-DECORATION: none
+}
+A.HoverLink:hover {
+	BORDER-LEFT-COLOR: #ff9900; BORDER-BOTTOM-COLOR: #ff9900; =
+BORDER-TOP-COLOR: #ff9900; BACKGROUND-COLOR: #ffcc99; =
+BORDER-RIGHT-COLOR: #ff9900
+}
+A.HoverLink:active {
+	BORDER-LEFT-COLOR: #ff9900; BORDER-BOTTOM-COLOR: #ff9900; =
+BORDER-TOP-COLOR: #ff9900; BACKGROUND-COLOR: #ffc082; =
+BORDER-RIGHT-COLOR: #ff9900
+}
+.links {
+	FONT-SIZE: 8pt
+}
+.messagetitle {
+	FONT-SIZE: 8pt
+}
+.SiteNewsHeading {
+	FONT-SIZE: 8pt
+}
+.FeatureBox {
+	BORDER-RIGHT: #6699cc 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: =
+#6699cc 1px solid; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; BORDER-LEFT: =
+#6699cc 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #6699cc 1px solid; =
+BACKGROUND-COLOR: #a5c9ef
+}
+.FeatureBoxHeader {
+	PADDING-LEFT: 2pt; FONT-WEIGHT: bold; FONT-SIZE: 13pt; PADDING-BOTTOM: =
+2pt; COLOR: #993300; FONT-FAMILY: Verdana
+}
+.FeatureBoxHeader A {
+	PADDING-LEFT: 2pt; FONT-WEIGHT: bold; FONT-SIZE: 13pt; PADDING-BOTTOM: =
+2pt; COLOR: #993300; FONT-FAMILY: Verdana
+}
+.FeatureBoxHeaderArrow {
+	BACKGROUND-COLOR: #6699cc
+}
+
+------=_NextPart_000_0000_01C6F68A.C3BD2330
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: 7bit
+Content-Location: http://www.codeproject.com/script/togglePre.js
+
+var MinPreHeight = 450;
+var MinPreChars  = 750;
+
+var PreOpen = new Image();
+var PreClose = new Image();
+PreOpen.src="/images/plus.gif";
+PreClose.src="/images/minus.gif";
+
+function togglePre()
+{
+	var id = this.getAttribute("preid");
+	var preelm = document.getElementById("pre" + id);
+	var imgelm = document.getElementById("preimg" + id);
+	var togelm = document.getElementById("precollapse" + id);
+
+	if (preelm.style.display != 'none') 
+	{
+		if (document.all) togelm.innerText = " Expand code snippet";
+		else 
+		{
+			document.getElementById("premain" + id).className = "precollapse";
+			togelm.firstChild.nodeValue = " Expand code snippet";
+		}
+		preelm.style.display = 'none';
+		imgelm.setAttribute("src", PreOpen.src);
+	}
+	else 
+	{
+		if (document.all) togelm.innerText = " Collapse";
+		else 
+		{	
+			document.getElementById("premain" + id).className = "smallText";
+			togelm.firstChild.nodeValue = " Collapse";
+		}
+		preelm.style.display = 'block';
+		imgelm.setAttribute("src", PreClose.src);
+	}
+}
+
+function InitTogglePre()
+{
+	var articleText = document.getElementById("contentdiv");
+	var pres = articleText.getElementsByTagName("pre");
+
+	for (var i=0; i<pres.length; i++)
+	{	
+		if (pres[i].offsetHeight == 0)
+		{
+			if (pres[i].innerText.length < MinPreChars) continue;
+		}
+		else if (pres[i].offsetHeight < MinPreHeight)
+			continue;
+		
+		var main = document.createElement("div");
+		main.style.width="100%";
+		main.setAttribute("id", "premain" + i.toString());
+
+		elm = document.createElement("img");
+		elm.setAttribute("id", "preimg" + i.toString());
+		elm.setAttribute("src", PreClose.src);
+		if (document.all) elm.style.cursor = "hand";
+		elm.setAttribute("height", 9);
+		elm.setAttribute("width", 9);
+		elm.setAttribute("preid", i);
+		elm.onclick = togglePre;
+
+		main.appendChild(elm);	
+	
+		elm = document.createElement("span");
+		elm.setAttribute("id", "precollapse" + i.toString());
+
+		if (document.all)
+		{
+			main.className = "precollapse";
+			elm.innerText = " Collapse";
+			elm.style.cursor = "hand";
+		}
+		else
+		{
+			main.className = "smallText";
+			//This is lame. Why can't W3C just allow innerText on spans??
+			var new_el = document.createTextNode(" Collapse");
+			elm.appendChild(new_el);
+		}
+		
+		elm.style.marginBottom = 0;
+		elm.onclick = togglePre;
+		elm.setAttribute("preid", i);
+	
+		main.appendChild(elm);
+		
+		pres[i].setAttribute("id", "pre" + i.toString());
+		pres[i].style.marginTop = 0;
+
+		var parent = pres[i].parentNode;
+		parent.insertBefore(main, pres[i]);
+	}
+}
+
+InitTogglePre();
+------=_NextPart_000_0000_01C6F68A.C3BD2330
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://codeproject.us.intellitxt.com/intellitxt/front.asp?ipid=5102
+
+var =
+itxturl=3D'http://codeproject.us.intellitxt.com/v3/door.jsp?ts=3D'+(new =
+Date()).getTime()+'&ipid=3D5102&refurl=3D'+document.location.href.replace=
+(/\&/g,'%26').replace(/\'/g, '%27').replace(/\"/g, '%22');
+try {
+document.write('<s'+'cript language=3D"javascript" =
+src=3D"'+itxturl+'"></s'+'cript>');
+}catch(e){}
+
+------=_NextPart_000_0000_01C6F68A.C3BD2330--

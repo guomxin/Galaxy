@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GalaxyJobs>
+  <NewJobs>
+    <NewJob>
+      <AutoReportStatus>false</AutoReportStatus>
+      <AllowLongIdleTime>false</AllowLongIdleTime>
+      <JobShortName>TE</JobShortName>
+      <RunExe>Job\ThrowException.exe</RunExe>
+      <Arguments></Arguments>
+      <PNInstanceNames>
+        <PNInstanceName>MSRA-GUOMAO!2</PNInstanceName>
+      </PNInstanceNames>
+      <ResourceFiles>
+        <Import dir="D:\Users\guomxin\Codes\Research\MSRAMM3\Researchers\guomxin\Galaxy\bin\TestData"/>
+      </ResourceFiles>
+    </NewJob>
+  </NewJobs>
+  <UpdateJobs>
+    <UpdateJob>
+      <JobName>DS@MSRA-GUOMAO!1</JobName>
+      <ResourceFiles>
+        <Import dir="D:\Users\guomxin\Codes\Research\MSRAMM3\Researchers\guomxin\Galaxy\bin\TestData"/>
+      </ResourceFiles>
+    </UpdateJob>
+  </UpdateJobs>
+</GalaxyJobs>

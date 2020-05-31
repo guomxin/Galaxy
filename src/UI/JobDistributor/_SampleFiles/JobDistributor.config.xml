@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<JobDistributorConfig>
+  <ListeningPort>8002</ListeningPort>
+  <ProcessNodes>
+    <ProcessNode>
+      <Name>WSM-WS-39!1</Name>
+      <Machine>WSM-WS-39</Machine>
+      <Port>8001</Port>
+    </ProcessNode>
+    <ProcessNode>
+      <Name>CHN-GUOMXIN!1</Name>
+      <Machine>CHN-GUOMXIN</Machine>
+      <Port>8001</Port>
+    </ProcessNode>
+  </ProcessNodes>
+</JobDistributorConfig>

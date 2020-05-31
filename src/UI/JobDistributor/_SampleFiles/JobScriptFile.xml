@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GalaxyJobs>
+  <NewJobs>
+    <!-- Submit a new job -->
+    <NewJob>
+      <AutoReportStatus>true | false</AutoReportStatus>
+      <AllowLongIdleTime>true | false</AllowLongIdleTime>
+      <!-- JobName = JobShortName@PNInstanceName-->
+      <JobShortName></JobShortName>
+      <RunExe></RunExe>
+      <Arguments></Arguments>
+      <PNInstanceNames>
+        <PNInstanceName></PNInstanceName>
+        <!-- More PN Instances-->
+      </PNInstanceNames>
+      <ResourceFiles>
+        <Import dir=""></Import>
+        <ResourceFile>
+          <SrcFile></SrcFile>
+          <DstFile></DstFile>
+        </ResourceFile>
+        <!-- Other resource files -->
+      </ResourceFiles>
+    </NewJob>
+    <!-- More new jobs -->
+  </NewJobs>
+  <UpdateJobs>
+    <!-- Update the resource files of the job -->
+    <UpdateJob>
+      <JobName></JobName>
+      <ResourceFiles>
+        <Import dir=""></Import>
+        <ResourceFile>
+          <SrcFile></SrcFile>
+          <DstFile></DstFile>
+        </ResourceFile>
+        <!-- Other resource files -->
+      </ResourceFiles>
+    </UpdateJob>
+    <!-- More update jobs -->
+  </UpdateJobs>
+</GalaxyJobs>

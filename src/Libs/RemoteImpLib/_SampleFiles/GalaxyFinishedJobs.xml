@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GalaxyFinishedJobs>
+  <GalaxyFinishedJob>
+    <JobId></JobId>
+    <UserName></UserName>
+    <ExeName></ExeName>
+    <Arguments></Arguments>
+    <JobRunResult></JobRunResult>
+    <JobOutputBaseDir></JobOutputBaseDir>
+  </GalaxyFinishedJob>
+</GalaxyFinishedJobs>
